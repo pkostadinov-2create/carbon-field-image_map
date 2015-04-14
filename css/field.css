@@ -1,0 +1,20 @@
+.crb_image_map {
+	position: relative;
+	display: inline-block;
+	max-width: 900px;
+	height:auto;
+}
+.crb_image_map > div { position: relative }
+.crb_image_map img {width:100%; height: auto}
+.crb_image_map span {
+	position: absolute;
+	display: block;
+	/*width:30px; 7 */
+	/*height:45px; 23 */
+	width: 23px;
+	height: 22px;
+	background: url(images/tooltip.png) 0 0 no-repeat;
+	background-size: 100% auto;
+}
+
+.carbon-ImageMap .hidden { display: none !important; }
