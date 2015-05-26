@@ -43,15 +43,16 @@ class Carbon_Field_Image_Map extends Carbon_Field {
 		?>
 		<input id="{{{ id }}}" type="hidden" name="{{{ name }}}" value="{{ value }}" class="regular-text" />
 
-		<div class="crb_image_map" id="<?php echo time(); ?>">
-			<div>
-				<span>&nbsp;</span>
-				<img src="{{{ image_map_src }}}" />
+		<# if ( image_map_src ) { #>
+			<div class="crb_image_map" id="<?php echo time(); ?>">
+				<div>
+					<span>&nbsp;</span>
+					<img src="{{{ image_map_src }}}" />
+				</div>
 			</div>
-		</div>
-
-		<% if (image_map_src) { %>
-		<% } %>
+		<# } else { #>
+			Please setup <strong>Map Image</strong> field first, and save this page.
+		<# } #>
 		
 		<?php
 	}
