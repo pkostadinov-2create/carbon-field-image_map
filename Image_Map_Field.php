@@ -1,6 +1,8 @@
 <?php
 
-class Carbon_Field_Image_Map extends Carbon_Field {
+namespace Carbon_Fields\Field;
+
+class Image_Map_Field extends Field {
 	/*
 	 * Properties
 	 */
@@ -22,7 +24,7 @@ class Carbon_Field_Image_Map extends Carbon_Field {
 		if ( empty($this->image_map_src) ) {
 			$page_id = get_the_id();
 			if ( has_post_thumbnail($page_id) ) {
-				$this->image_map_src = crb_wp_get_attachment_image_src(get_post_thumbnail_id($page_id), 'crb_map_inner_images');
+				$this->image_map_src = wp_get_attachment_image_src(get_post_thumbnail_id($page_id), 'full')[0];
 			}
 		}
 
@@ -65,13 +67,14 @@ class Carbon_Field_Image_Map extends Carbon_Field {
 	 * 
 	 */
 	function admin_enqueue_scripts() {
-		$template_dir = get_template_directory_uri();
+		// Get the current url for the carbon-fields-number, regardless of the location
+		$template_dir .= str_replace(wp_normalize_path(get_template_directory()), '', wp_normalize_path(__DIR__));
 
 		# Enqueue JS
-		crb_enqueue_script('carbon-field-image-map', $template_dir . '/includes/Carbon_Field_Image_Map/js/field.js', array('carbon-fields'));
+		crb_enqueue_script('carbon-field-image-map', $template_dir . '/js/field.js', array('carbon-fields'));
 
 		# Enqueue CSS
-		crb_enqueue_style('carbon-field-image-map', $template_dir . '/includes/Carbon_Field_Image_Map/css/field.css');
+		crb_enqueue_style('carbon-field-image-map', $template_dir . '/css/field.css');
 	}
 
 	function set_image($url) {

@@ -16,7 +16,7 @@ load_plugin_textdomain('carbon-field-image-map', false, dirname( plugin_basename
  */
 add_action('after_setup_theme', 'crb_init_carbon_field_image_map', 15);
 function crb_init_carbon_field_image_map() {
-	if (class_exists("Carbon_Field")) {
-		include_once dirname(__FILE__) . '/Carbon_Field_Image_Map.php';
+	if (class_exists('Carbon_Fields\\Field\\Field')) {
+		include_once dirname(__FILE__) . '/Image_Map_Field.php';
 	}
 }
