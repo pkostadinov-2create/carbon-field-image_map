@@ -9,7 +9,11 @@
         {
             "name": "Plamen Kostadinov",
             "email": "pkostadinov.2create@gmail.com"
-        }
+        },
+        {
+            "name": "Nikolay Vylchev",
+            "email": "nvylchev.2create@gmail.com",
+        },
     ],
     "require": {},
     "autoload": {
