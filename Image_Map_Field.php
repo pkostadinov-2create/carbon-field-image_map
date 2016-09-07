@@ -66,7 +66,7 @@ class Image_Map_Field extends Field {
 	 * Use this method to enqueue CSS + JavaScript files.
 	 * 
 	 */
-	function admin_enqueue_scripts() {
+	static function admin_enqueue_scripts() {
 		// Get the current url for the carbon-fields-number, regardless of the location
 		$template_dir .= str_replace(wp_normalize_path(get_template_directory()), '', wp_normalize_path(__DIR__));
 
