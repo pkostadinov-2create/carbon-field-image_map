@@ -1,1 +1,7 @@
-# Carbon_Field_Image_Map
+# Image_Map_Field
+
+Usage:
+
+```
+Field::make('image_map', 'image', 'Image')
+```
